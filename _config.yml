@@ -1,0 +1,12 @@
+title: "申剑涛's Academic Homepage"
+description: "华南理工大学 数学学院 数学与应用数学（统计学）22级本科生"
+url: "https://shenjiantao.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Social icons
+github_username: shenjiantao
+email: "j850620350@gmail.com"

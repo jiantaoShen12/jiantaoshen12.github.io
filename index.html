@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>申剑涛 - 个人主页</title>
+  <meta name="description" content="申剑涛 - 北京大学前沿交叉学科研究院 博士候选人">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1E293B;
+      --accent: #1E88E5;
+      --accent-hover: #0B5E9E;
+      --accent-purple: #7C3AED;
+      --bg: #F5F7FC;
+      --card-bg: #ffffff;
+      --sidebar-bg: #FAFCFE;
+      --text: #1E293B;
+      --text-secondary: #5B6E8C;
+      --text-muted: #94A3B8;
+      --border: #E9EEF3;
+      --sidebar-width: 270px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans SC', 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--accent-hover); }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section { animation: fadeUp .5s ease both; }
+    section:nth-child(2) { animation-delay: .08s; }
+    section:nth-child(3) { animation-delay: .16s; }
+    section:nth-child(4) { animation-delay: .24s; }
+    section:nth-child(5) { animation-delay: .32s; }
+
+    /* === NAV === */
+    .top-nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(245,247,252,.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0,0,0,.04);
+    }
+    .top-nav .inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 56px;
+    }
+    .top-nav .brand { font-weight: 700; font-size: 1.05rem; color: var(--primary); letter-spacing: .02em; }
+    .top-nav .nav-right { display: flex; align-items: center; gap: 18px; }
+    .top-nav ul { list-style: none; display: flex; gap: 22px; }
+    .top-nav ul li a {
+      color: var(--text-secondary); font-size: .84rem; font-weight: 500;
+      transition: color .2s; position: relative; letter-spacing: .01em;
+    }
+    .top-nav ul li a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+      border-radius: 1px; transition: width .25s ease;
+    }
+    .top-nav ul li a:hover { color: var(--accent); }
+    .top-nav ul li a:hover::after { width: 100%; }
+    .hamburger { display: none; background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--primary); }
+
+    /* === LANG TOGGLE === */
+    .lang-toggle {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 20px;
+      background: rgba(30,136,229,.08); border: 1px solid rgba(30,136,229,.15);
+      cursor: pointer; font-size: .78rem; font-weight: 600;
+      color: var(--accent); transition: all .2s; white-space: nowrap;
+      letter-spacing: .03em;
+    }
+    .lang-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .lang-toggle i { font-size: .85rem; }
+
+    /* === LAYOUT === */
+    .wrapper {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; gap: 48px;
+      padding: 80px 24px 40px;
+    }
+
+    /* === SIDEBAR === */
+    .sidebar {
+      width: var(--sidebar-width); flex-shrink: 0;
+      position: sticky; top: 80px; align-self: flex-start;
+    }
+    .sidebar-inner {
+      background: var(--sidebar-bg);
+      border-radius: 20px; padding: 32px 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px -4px rgba(0,0,0,.04);
+    }
+    .sidebar .avatar-wrap { text-align: center; margin-bottom: 20px; }
+    .sidebar .avatar-placeholder {
+      width: 180px; height: 180px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto; font-size: 2.8rem; color: #fff; font-weight: 700;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 4px rgba(30,136,229,.12), 0 8px 24px -6px rgba(30,136,229,.25);
+      letter-spacing: .05em;
+    }
+    .sidebar h2 { text-align: center; font-size: 1.35rem; margin: 14px 0 4px; color: var(--primary); font-weight: 700; }
+    .sidebar .bio {
+      text-align: center; font-size: .84rem; color: var(--text-secondary);
+      margin-bottom: 22px; line-height: 1.65;
+    }
+    .sidebar .info-list { list-style: none; }
+    .sidebar .info-list li {
+      padding: 9px 0; font-size: .84rem; color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sidebar .info-list li:last-child { border-bottom: none; }
+    .sidebar .info-list li i { width: 18px; text-align: center; color: var(--accent); font-size: .88rem; }
+    .sidebar .social-links {
+      display: flex; justify-content: center; gap: 12px;
+      margin-top: 20px; flex-wrap: wrap;
+    }
+    .sidebar .social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(30,136,229,.06); color: var(--accent);
+      transition: all .25s; font-size: 1rem;
+      border: 1px solid rgba(30,136,229,.1);
+    }
+    .sidebar .social-links a:hover {
+      background: var(--accent); color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px -2px rgba(30,136,229,.3);
+    }
+
+    /* === MAIN CONTENT === */
+    .main-content { flex: 1; min-width: 0; }
+    section { margin-bottom: 48px; }
+    .section-title {
+      font-size: 1.25rem; font-weight: 700; color: var(--primary);
+      padding-bottom: 12px; margin-bottom: 22px;
+      border-bottom: none;
+      display: flex; align-items: center; gap: 10px;
+      position: relative;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 56px; height: 3px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+    }
+    .section-title i { color: var(--accent); font-size: 1.1rem; }
+
+    /* === CARDS === */
+    .card {
+      background: var(--card-bg); border-radius: 16px;
+      padding: 28px; margin-bottom: 16px;
+      box-shadow: 0 2px 12px -4px rgba(0,0,0,.05);
+      border: 1px solid var(--border);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,.1);
+    }
+
+    .about-text { font-size: .95rem; line-height: 1.85; color: var(--text); }
+    .about-text strong { color: var(--accent); font-weight: 600; }
+
+    /* Publications */
+    .pub-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-item .pub-title { font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; line-height: 1.55; }
+    .pub-item .pub-title a { color: var(--accent); }
+    .pub-item .pub-title a:hover { color: var(--accent-hover); text-decoration: underline; }
+    .pub-item .pub-authors { font-size: .86rem; color: var(--text-secondary); margin-bottom: 4px; }
+    .pub-item .pub-authors .me {
+      font-weight: 700; color: var(--accent);
+      background: rgba(30,136,229,.06);
+      padding: 1px 6px; border-radius: 4px;
+    }
+    .pub-item .pub-venue { font-size: .84rem; color: var(--accent-purple); font-style: italic; margin-bottom: 6px; font-weight: 500; }
+    .pub-item .pub-meta { font-size: .8rem; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .pub-item .pub-meta .tag {
+      display: inline-block; background: rgba(124,58,237,.06); color: var(--accent-purple);
+      padding: 2px 10px; border-radius: 12px; font-size: .72rem; font-weight: 500;
+    }
+    .pub-item .pub-meta .doi-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(30,136,229,.06); color: var(--accent);
+      padding: 2px 10px; border-radius: 12px; font-size: .72rem; font-weight: 600;
+      transition: all .2s;
+    }
+    .pub-item .pub-meta .doi-link:hover { background: var(--accent); color: #fff; }
+
+    /* Education timeline */
+    .edu-timeline { position: relative; padding-left: 32px; }
+    .edu-timeline::before {
+      content: ''; position: absolute; left: 10px; top: 6px; bottom: 6px;
+      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent-purple));
+      opacity: .3;
+    }
+    .edu-item { position: relative; margin-bottom: 26px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item::before {
+      content: ''; position: absolute; left: -26px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 3px solid #fff;
+      box-shadow: 0 0 0 2px rgba(30,136,229,.2), 0 0 8px rgba(30,136,229,.15);
+    }
+    .edu-item .edu-date { font-size: .8rem; color: var(--accent); font-weight: 600; letter-spacing: .02em; }
+    .edu-item .edu-degree { font-size: .95rem; font-weight: 600; color: var(--primary); margin: 3px 0; }
+    .edu-item .edu-school { font-size: .86rem; color: var(--text-secondary); }
+
+    /* Honors */
+    .honor-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .honor-item:last-child { border-bottom: none; }
+    .honor-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1rem; color: #fff;
+    }
+    .honor-text h4 { font-size: .92rem; color: var(--primary); margin-bottom: 2px; font-weight: 600; }
+    .honor-text p { font-size: .82rem; color: var(--text-muted); }
+
+    /* Research */
+    .research-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .research-item:last-child { border-bottom: none; }
+    .research-num {
+      width: 32px; height: 32px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: #fff; font-size: .85rem; font-weight: 700;
+    }
+    .research-item h4 { font-size: .95rem; color: var(--primary); margin-bottom: 3px; font-weight: 600; }
+    .research-item p { font-size: .84rem; color: var(--text-muted); }
+
+    /* Footer */
+    .footer {
+      text-align: center; padding: 32px 20px;
+      font-size: .8rem; color: var(--text-muted);
+      border-top: 1px solid var(--border); margin-top: 48px;
+    }
+    .footer a { color: var(--accent); }
+    .back-to-top {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(30,136,229,.06); color: var(--accent);
+      margin-top: 12px; transition: all .2s; font-size: .9rem;
+      border: 1px solid rgba(30,136,229,.1);
+    }
+    .back-to-top:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .wrapper { flex-direction: column; padding: 70px 16px 20px; gap: 32px; }
+      .sidebar { width: 100%; position: static; }
+      .sidebar-inner { padding: 24px 20px; }
+      .top-nav .nav-right ul { display: none; }
+      .top-nav .nav-right ul.active {
+        display: flex; flex-direction: column;
+        position: absolute; top: 56px; left: 0; right: 0;
+        background: rgba(245,247,252,.97); padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 4px 16px rgba(0,0,0,.06);
+        backdrop-filter: blur(16px);
+      }
+      .hamburger { display: block; }
+      section { margin-bottom: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <div class="inner">
+    <span class="brand">
+      <span data-lang="zh">申剑涛</span>
+      <span data-lang="en" style="display:none;">Jiantao Shen</span>
+    </span>
+    <div class="nav-right">
+      <ul id="nav-links">
+        <li><a href="#about" data-lang="zh">关于我</a><a href="#about" data-lang="en" style="display:none;">About</a></li>
+        <li><a href="#research" data-lang="zh">科研兴趣</a><a href="#research" data-lang="en" style="display:none;">Research</a></li>
+        <li><a href="#education" data-lang="zh">教育背景</a><a href="#education" data-lang="en" style="display:none;">Education</a></li>
+        <li><a href="#publications" data-lang="zh">出版物</a><a href="#publications" data-lang="en" style="display:none;">Publications</a></li>
+        <li><a href="#honors" data-lang="zh">荣誉奖项</a><a href="#honors" data-lang="en" style="display:none;">Honors</a></li>
+      </ul>
+      <button class="lang-toggle" onclick="toggleLang()" title="Switch language">
+        <i class="fas fa-globe"></i>
+        <span id="lang-label">EN</span>
+      </button>
+      <button class="hamburger" onclick="document.getElementById('nav-links').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- LAYOUT -->
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="avatar-wrap">
+        <div class="avatar-placeholder">JS</div>
+      </div>
+      <h2>
+        <span data-lang="zh">申剑涛</span>
+        <span data-lang="en" style="display:none;">Jiantao Shen</span>
+      </h2>
+      <p class="bio">
+        <span data-lang="zh">北京大学 · 前沿交叉学科研究院<br>大数据科学中心 博士候选人</span>
+        <span data-lang="en" style="display:none;">Ph.D. Candidate<br>Center for Big Data Science<br>Academy for Advanced Interdisciplinary Studies<br>Peking University</span>
+      </p>
+
+      <ul class="info-list">
+        <li>
+          <i class="fas fa-graduation-cap"></i>
+          <span data-lang="zh">博士候选人（大数据科学中心）</span>
+          <span data-lang="en" style="display:none;">Ph.D. Candidate, Center for Big Data Science</span>
+        </li>
+        <li>
+          <i class="fas fa-university"></i>
+          <span data-lang="zh">北京大学</span>
+          <span data-lang="en" style="display:none;">Peking University</span>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span data-lang="zh">北京, 中国</span>
+          <span data-lang="en" style="display:none;">Beijing, China</span>
+        </li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:j850620350@gmail.com">j850620350@gmail.com</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="mailto:j850620350@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">
+        <i class="fas fa-user"></i>
+        <span data-lang="zh">关于我</span>
+        <span data-lang="en" style="display:none;">About Me</span>
+      </h2>
+      <div class="card">
+        <p class="about-text">
+          <span data-lang="zh">我的研究兴趣集中在<strong>单细胞多组学和空间转录组数据的动力学建模</strong>与<strong>细胞命运决策的临界识别</strong>。</span>
+          <span data-lang="en" style="display:none;">My research interests focus on <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong> and <strong>critical transition identification in cell fate decisions</strong>.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <h2 class="section-title">
+        <i class="fas fa-flask"></i>
+        <span data-lang="zh">科研兴趣</span>
+        <span data-lang="en" style="display:none;">Research</span>
+      </h2>
+      <div class="card">
+        <div class="research-item">
+          <div class="research-num" style="background:linear-gradient(135deg,#1E88E5,#7C3AED);">1</div>
+          <div>
+            <h4>
+              <span data-lang="zh">单细胞多组学和空间转录组的动力学</span>
+              <span data-lang="en" style="display:none;">Dynamics of single-cell multi-omics and spatial transcriptomics</span>
+            </h4>
+            <p data-lang="zh">Spatiotemporal dynamics of single-cell and spatial transcriptomics</p>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="research-num" style="background:linear-gradient(135deg,#7C3AED,#f5576c);">2</div>
+          <div>
+            <h4>
+              <span data-lang="zh">单细胞命运决策的临界识别</span>
+              <span data-lang="en" style="display:none;">Critical transition identification in single-cell fate decisions</span>
+            </h4>
+            <p data-lang="zh">Critical transition identification in single-cell fate decisions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">
+        <i class="fas fa-graduation-cap"></i>
+        <span data-lang="zh">教育背景</span>
+        <span data-lang="en" style="display:none;">Education</span>
+      </h2>
+      <div class="card">
+        <div class="edu-timeline">
+          <div class="edu-item">
+            <div class="edu-date">2026.09 - <span data-lang="zh">至今</span><span data-lang="en" style="display:none;">Present</span></div>
+            <div class="edu-degree">
+              <span data-lang="zh">博士候选人</span>
+              <span data-lang="en" style="display:none;">Ph.D. Candidate</span>
+            </div>
+            <div class="edu-school">
+              <span data-lang="zh">北京大学 · 前沿交叉学科研究院 · 大数据科学中心</span>
+              <span data-lang="en" style="display:none;">Center for Big Data Science, Academy for Advanced Interdisciplinary Studies, Peking University</span>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-date">2022.09 - 2026.09</div>
+            <div class="edu-degree">
+              <span data-lang="zh">理学学士（数学与应用数学 · 统计学方向）</span>
+              <span data-lang="en" style="display:none;">B.S. in Mathematics and Applied Mathematics (Statistics)</span>
+            </div>
+            <div class="edu-school">
+              <span data-lang="zh">华南理工大学 · 数学学院</span>
+              <span data-lang="en" style="display:none;">South China University of Technology · School of Mathematics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2 class="section-title">
+        <i class="fas fa-book"></i>
+        <span data-lang="zh">出版物</span>
+        <span data-lang="en" style="display:none;">Publications</span>
+      </h2>
+      <div class="card">
+        <div class="pub-item">
+          <div class="pub-title">
+            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a>
+          </div>
+          <div class="pub-authors">
+            Zhenyi Zhang, Zihan Wang, Yuhao Sun, <span class="me">Jiantao Shen</span>, Qiangwei Peng, Tiejun Li, Peijie Zhou
+          </div>
+          <div class="pub-venue">npj Systems Biology and Applications</div>
+          <div class="pub-meta">
+            <span>2025-12-04</span>
+            <span class="tag">Journal article</span>
+            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model
+          </div>
+          <div class="pub-authors">
+            <span class="me">Jiantao Shen</span>, Nan Chen, Bowen Niu, Jiayuan Zhong, Rui Liu
+          </div>
+          <div class="pub-venue">The Innovation</div>
+          <div class="pub-meta">
+            <span>2025-06</span>
+            <span class="tag">Journal article</span>
+            <a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONORS -->
+    <section id="honors">
+      <h2 class="section-title">
+        <i class="fas fa-trophy"></i>
+        <span data-lang="zh">荣誉奖项</span>
+        <span data-lang="en" style="display:none;">Honors & Awards</span>
+      </h2>
+      <div class="card">
+        <div class="honor-item">
+          <div class="honor-icon"><i class="fas fa-award"></i></div>
+          <div class="honor-text">
+            <h4>
+              <span data-lang="zh">校级优秀论文</span>
+              <span data-lang="en" style="display:none;">University-level Outstanding Thesis</span>
+            </h4>
+            <p>2026.06.08</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <p>
+    <span data-lang="zh">&copy; 2025 申剑涛 | 北京大学 前沿交叉学科研究院</span>
+    <span data-lang="en" style="display:none;">&copy; 2025 Jiantao Shen | Academy for Advanced Interdisciplinary Studies, Peking University</span>
+  </p>
+  <p style="margin-top:4px;">Last updated: June 2025</p>
+  <a href="#top" class="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
+</footer>
+
+<script>
+  let currentLang = 'zh';
+
+  function toggleLang() {
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
+    });
+    document.getElementById('lang-label').textContent = currentLang === 'zh' ? 'EN' : '中文';
+    document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+  }
+</script>
+
+</body>
+</html>
