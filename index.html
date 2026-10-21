@@ -199,34 +199,161 @@
       .entry-date { order: -1; padding: 0; text-align: left; }
       .footer-inner { padding-inline: 18px; }
     }
+
+    /* Compact editorial header: a dark forest navigation band and softly lit foliage. */
+    .site-header {
+      color: var(--forest);
+      background: #eef3e9;
+      border-bottom: 1px solid #d4e1cf;
+    }
+    .header-top { background: var(--forest); }
+    .nav-shell {
+      max-width: 1080px;
+      height: 57px;
+      padding: 0 24px;
+      border: 0;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 14px; min-width: 0; }
+    .wordmark {
+      color: #f9fbf5;
+      font: 600 25px/1 var(--serif);
+      letter-spacing: -.065em;
+      white-space: nowrap;
+    }
+    .wordmark::before { content: none; display: none; }
+    .wordmark-dot { color: var(--leaf); }
+    .site-kind {
+      color: #cad8c6;
+      border-left: 1px solid #5f7d65;
+      padding-left: 14px;
+      font-size: 9px;
+      line-height: 1.2;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      white-space: nowrap;
+    }
+    .desktop-nav a {
+      color: #e7efe3;
+      font-size: 11.5px;
+      transition: color .15s ease;
+    }
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible { color: var(--leaf); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 262px;
+      gap: 38px;
+      align-items: center;
+      max-width: 1080px;
+      padding: 24px 24px 27px;
+    }
+    .hero-main { min-width: 0; }
+    .eyebrow {
+      color: #648166;
+      margin: 0 0 8px;
+      font-size: 9.5px;
+      letter-spacing: .13em;
+    }
+    .eyebrow::before { width: 20px; height: 2px; background: #adc793; }
+    h1 {
+      color: var(--forest-dark);
+      font: 500 clamp(31px,3.7vw,43px)/1.12 var(--serif);
+      letter-spacing: -.035em;
+      margin: 0 0 6px;
+    }
+    .hero-subtitle {
+      color: #4e6754;
+      font-size: 12.5px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .hero-separator { margin: 0 6px; color: #93ae84; }
+    .hero-aside {
+      padding-left: 22px;
+      border-left: 1px solid #cbdac6;
+      align-self: center;
+    }
+    .hero-aside-label {
+      margin: 0 0 5px;
+      color: #668566;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .hero-aside > p:last-child {
+      margin: 0;
+      color: #344d3c;
+      font: 500 13px/1.56 var(--serif);
+    }
+    .hero-mobile-focus { display: none; }
+    @media (max-width: 740px) {
+      .hero { grid-template-columns: 1fr; padding: 22px 20px 24px; }
+      .hero-aside { display: none; }
+      .hero-mobile-focus {
+        display: block;
+        margin: 11px 0 0;
+        color: #607764;
+        font-size: 11px;
+        line-height: 1.65;
+      }
+    }
+    @media (max-width: 620px) {
+      .nav-shell { height: 54px; padding-inline: 18px; }
+      .brand { gap: 10px; }
+      .site-kind { font-size: 8px; padding-left: 10px; letter-spacing: .1em; }
+      .wordmark { font-size: 23px; }
+      .mobile-menu summary { color: #f3f7ed; }
+      .hero { padding: 22px 18px 23px; }
+      .eyebrow { font-size: 8.5px; letter-spacing: .095em; }
+      h1 { font-size: 35px; }
+      .hero-subtitle { font-size: 12px; }
+    }
+    @media (max-width: 370px) {
+      .site-kind { display: none; }
+    }
   </style>
 </head>
 <body id="top">
   <header class="site-header">
-    <div class="nav-shell">
-      <a class="wordmark" href="#top">Jiantao Shen</a>
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#research">Research</a>
-        <a href="#education">Education</a>
-        <a href="#honors">Honors</a>
-      </nav>
-      <details class="mobile-menu">
-        <summary>Menu</summary>
-        <nav aria-label="Mobile navigation">
+    <div class="header-top">
+      <div class="nav-shell">
+        <div class="brand">
+          <a class="wordmark" href="#top" aria-label="Jiantao Shen, back to top">JS<span class="wordmark-dot">.</span></a>
+          <span class="site-kind">Academic homepage</span>
+        </div>
+        <nav class="desktop-nav" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#publications">Publications</a>
           <a href="#research">Research</a>
           <a href="#education">Education</a>
           <a href="#honors">Honors</a>
         </nav>
-      </details>
+        <details class="mobile-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#research">Research</a>
+            <a href="#education">Education</a>
+            <a href="#honors">Honors</a>
+          </nav>
+        </details>
+      </div>
     </div>
     <div class="hero">
-      <p class="eyebrow">Academic profile · Peking University</p>
-      <h1>Jiantao Shen</h1>
-      <p class="hero-subtitle">Single-cell multi-omics &nbsp;·&nbsp; Spatial transcriptomics &nbsp;·&nbsp; Cell fate dynamics</p>
+      <div class="hero-main">
+        <p class="eyebrow">Computational biology · Peking University</p>
+        <h1>Jiantao Shen</h1>
+        <p class="hero-subtitle">Ph.D. Student <span class="hero-separator" aria-hidden="true">·</span> Big Data Center</p>
+        <p class="hero-mobile-focus">Single-cell multi-omics · Spatial transcriptomics · Cell fate dynamics</p>
+      </div>
+      <div class="hero-aside" aria-label="Research focus">
+        <p class="hero-aside-label">Research focus</p>
+        <p>Single-cell multi-omics<br>Spatial transcriptomics<br>Cell fate dynamics</p>
+      </div>
     </div>
   </header>
 
