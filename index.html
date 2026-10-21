@@ -2,522 +2,275 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#203d2d">
+  <meta name="description" content="Jiantao Shen is a Ph.D. student at the Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University. Research in single-cell multi-omics, spatial transcriptomics, and cell fate dynamics.">
   <title>Jiantao Shen | Academic Homepage</title>
-  <meta name="description" content="Jiantao Shen, Ph.D. student at the Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University. Research in single-cell multi-omics and spatial transcriptomics dynamics.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1E293B;
-      --accent: #1E88E5;
-      --accent-hover: #0B5E9E;
-      --accent-purple: #7C3AED;
-      --bg: #F5F7FC;
-      --card-bg: #ffffff;
-      --sidebar-bg: #FAFCFE;
-      --text: #1E293B;
-      --text-secondary: #5B6E8C;
-      --text-muted: #94A3B8;
-      --border: #E9EEF3;
-      --sidebar-width: 270px;
+      --forest: #203d2d;
+      --forest-dark: #193325;
+      --leaf: #b6ce90;
+      --sage: #617b60;
+      --paper: #f7f8f3;
+      --white: #fff;
+      --ink: #25382c;
+      --muted: #637469;
+      --border: #dce5da;
+      --pale-leaf: #edf2e5;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 15px/1.85 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--leaf); outline-offset: 4px; }
+    ::selection { background: var(--leaf); color: var(--forest-dark); }
+    .site-header { color: #f7faf2; background: var(--forest); border-bottom: 4px solid var(--leaf); }
+    .nav-shell { max-width: 1112px; height: 68px; padding: 0 28px; margin: auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .wordmark { color: #fff; font: 600 21px/1 var(--serif); letter-spacing: -.02em; }
+    .wordmark::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 12px; border-radius: 50%; background: var(--leaf); vertical-align: 3px; }
+    .desktop-nav { display: flex; align-items: center; gap: 27px; }
+    .desktop-nav a { color: #e7eee1; font-size: 12px; font-weight: 500; letter-spacing: .01em; }
+    .desktop-nav a:hover, .mobile-menu nav a:hover { color: var(--leaf); }
+    .mobile-menu { display: none; }
+    .hero { max-width: 1112px; padding: 59px 28px 67px; margin: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 13px; margin: 0 0 17px; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--leaf); }
+    .eyebrow::before { content: ""; display: block; width: 27px; height: 2px; background: var(--leaf); }
+    h1 { font: 500 clamp(42px, 5vw, 62px)/1.12 var(--serif); letter-spacing: -.035em; margin: 0 0 19px; }
+    .hero-subtitle { margin: 0; color: #e0e9dc; font-size: 14px; letter-spacing: .005em; }
+    .page { display: grid; grid-template-columns: 246px minmax(0,1fr); gap: 76px; max-width: 1112px; margin: 0 auto; padding: 56px 28px 85px; }
+    .sidebar { min-width: 0; }
+    .profile-card { position: sticky; top: 24px; padding: 15px 15px 23px; background: var(--white); border: 1px solid var(--border); border-radius: 6px; }
+    .portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border-radius: 3px; background: var(--pale-leaf); }
+    .profile-info { padding: 19px 6px 0; }
+    .small-label { margin: 0 0 12px; color: var(--sage); font-size: 10px; font-weight: 700; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; }
+    .position { margin: 0 0 5px; font: 600 22px/1.3 var(--serif); color: var(--forest); }
+    .affiliation { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.75; }
+    .profile-divider { border: 0; border-top: 1px solid var(--border); margin: 21px 0 17px; }
+    .contact-item { display: flex; align-items: baseline; gap: 9px; margin-top: 10px; font-size: 12px; line-height: 1.7; color: var(--forest); overflow-wrap: anywhere; }
+    .contact-item::before { content: "↗"; color: var(--sage); font-weight: 700; flex: 0 0 auto; }
+    .contact-item:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .location { margin: 16px 0 0; font-size: 11px; color: var(--muted); }
+    .main { min-width: 0; }
+    .section { padding: 0 0 36px; margin-bottom: 39px; border-bottom: 1px solid var(--border); scroll-margin-top: 28px; }
+    .section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .section-heading { display: flex; align-items: center; gap: 13px; margin: 0 0 20px; font: 600 29px/1.22 var(--serif); color: var(--forest); letter-spacing: -.025em; }
+    .section-heading::before { content: ""; display: block; width: 5px; height: 21px; flex: 0 0 auto; background: var(--leaf); }
+    .about-copy { max-width: 690px; margin: 0; font-size: 15px; line-height: 1.95; color: var(--ink); }
+    .about-copy strong { font-weight: 600; color: var(--forest); }
+    .research-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .research-item { min-height: 128px; background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 19px 21px 18px; }
+    .research-number { display: block; margin-bottom: 13px; color: var(--sage); font-size: 11px; font-weight: 600; letter-spacing: .1em; }
+    .research-item h3 { margin: 0; font: 500 19px/1.35 var(--serif); letter-spacing: -.01em; color: var(--forest); }
+    .publication { display: grid; grid-template-columns: 27px minmax(0,1fr); gap: 14px; padding: 25px 0; border-top: 1px solid var(--border); }
+    .publication:first-of-type { padding-top: 7px; border-top: 0; }
+    .pub-number { padding-top: 5px; font-size: 11px; color: var(--sage); font-weight: 600; }
+    .pub-title { font: 500 20px/1.48 var(--serif); margin: 0 0 10px; color: var(--forest); }
+    .pub-title a:hover { text-decoration: underline; text-decoration-color: var(--sage); text-underline-offset: 3px; }
+    .pub-authors { margin: 0 0 8px; font-size: 12.5px; color: var(--muted); line-height: 1.85; }
+    .pub-authors strong { color: var(--forest); font-weight: 700; }
+    .pub-venue { margin: 0; font-size: 12px; font-weight: 500; color: var(--sage); }
+    .pub-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; margin-top: 12px; font-size: 11px; color: var(--muted); }
+    .pub-type { background: var(--pale-leaf); color: var(--forest); padding: 2px 9px; border-radius: 3px; font-weight: 600; }
+    .pub-meta a { color: var(--forest); font-weight: 600; text-decoration: underline; text-decoration-color: #a5baa0; text-underline-offset: 3px; }
+    .pub-meta a:hover { text-decoration-color: var(--forest); }
+    .edu-entry, .honor-entry { display: grid; grid-template-columns: minmax(0,1fr) 155px; gap: 20px; align-items: start; padding: 18px 0; border-top: 1px solid var(--border); }
+    .edu-entry:first-of-type { border-top: 0; padding-top: 5px; }
+    .entry-title { font: 500 19px/1.4 var(--serif); color: var(--forest); margin: 0 0 5px; }
+    .entry-desc { font-size: 12.5px; line-height: 1.75; color: var(--muted); margin: 0; }
+    .entry-date { text-align: right; font-size: 12px; color: var(--sage); white-space: nowrap; padding-top: 4px; }
+    .site-footer { border-top: 1px solid var(--border); color: var(--muted); }
+    .footer-inner { max-width: 1112px; margin: auto; padding: 26px 28px 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 9px 20px; font-size: 11px; }
+    @media (max-width: 850px) {
+      .page { grid-template-columns: 1fr; gap: 38px; padding-top: 42px; }
+      .profile-card { position: static; display: grid; grid-template-columns: 156px minmax(0,1fr); gap: 22px; align-items: start; }
+      .portrait { width: 156px; }
+      .profile-info { padding: 4px 5px 0 0; }
+      .profile-divider { margin: 14px 0 10px; }
     }
-    a { color: var(--accent); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--accent-hover); }
-
-    /* === ANIMATIONS === */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 620px) {
+      .nav-shell { padding: 0 20px; height: 60px; }
+      .wordmark { font-size: 19px; }
+      .desktop-nav { display: none; }
+      .mobile-menu { display: block; position: relative; font-size: 12px; }
+      .mobile-menu summary { list-style: none; cursor: pointer; padding: 7px 0 7px 14px; color: #f0f4eb; }
+      .mobile-menu summary::-webkit-details-marker { display: none; }
+      .mobile-menu summary::after { content: " +"; color: var(--leaf); }
+      .mobile-menu[open] summary::after { content: " −"; }
+      .mobile-menu nav { position: absolute; right: 0; top: 37px; min-width: 175px; z-index: 3; background: var(--forest-dark); padding: 10px 16px; border: 1px solid #49634a; border-radius: 4px; }
+      .mobile-menu nav a { display: block; color: #f0f4eb; padding: 7px 0; }
+      .hero { padding: 44px 20px 49px; }
+      .hero-subtitle { font-size: 12.5px; line-height: 1.8; }
+      .page { padding: 32px 20px 60px; }
+      .profile-card { grid-template-columns: 112px minmax(0,1fr); gap: 15px; padding: 12px; }
+      .portrait { width: 112px; }
+      .profile-info { padding-top: 2px; }
+      .position { font-size: 19px; }
+      .affiliation { font-size: 11px; }
+      .small-label { font-size: 9px; }
+      .contact-item { font-size: 10.5px; }
+      .section-heading { font-size: 26px; }
+      .research-list { grid-template-columns: 1fr; gap: 12px; }
+      .research-item { min-height: 0; }
+      .publication { grid-template-columns: 21px minmax(0,1fr); gap: 9px; }
+      .pub-title { font-size: 18px; }
+      .edu-entry, .honor-entry { grid-template-columns: 1fr; gap: 5px; }
+      .entry-date { order: -1; text-align: left; padding: 0; }
+      .footer-inner { padding: 22px 20px; }
     }
-    section { animation: fadeUp .5s ease both; }
-    section:nth-child(2) { animation-delay: .08s; }
-    section:nth-child(3) { animation-delay: .16s; }
-    section:nth-child(4) { animation-delay: .24s; }
-    section:nth-child(5) { animation-delay: .32s; }
-
-    /* === NAV === */
-    .top-nav {
-      position: fixed; top: 0; width: 100%; z-index: 1000;
-      background: rgba(245,247,252,.85);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 8px rgba(0,0,0,.04);
-    }
-    .top-nav .inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 24px; height: 56px;
-    }
-    .top-nav .brand { font-weight: 700; font-size: 1.05rem; color: var(--primary); letter-spacing: .02em; }
-    .top-nav .nav-right { display: flex; align-items: center; gap: 18px; }
-    .top-nav ul { list-style: none; display: flex; gap: 22px; }
-    .top-nav ul li a {
-      color: var(--text-secondary); font-size: .84rem; font-weight: 500;
-      transition: color .2s; position: relative; letter-spacing: .01em;
-    }
-    .top-nav ul li a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
-      border-radius: 1px; transition: width .25s ease;
-    }
-    .top-nav ul li a:hover { color: var(--accent); }
-    .top-nav ul li a:hover::after { width: 100%; }
-    .hamburger { display: none; background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--primary); }
-
-    /* === LAYOUT === */
-    .wrapper {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; gap: 48px;
-      padding: 80px 24px 40px;
-    }
-
-    /* === SIDEBAR === */
-    .sidebar {
-      width: var(--sidebar-width); flex-shrink: 0;
-      position: sticky; top: 80px; align-self: flex-start;
-    }
-    .sidebar-inner {
-      background: var(--sidebar-bg);
-      border-radius: 20px; padding: 32px 24px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 16px -4px rgba(0,0,0,.04);
-    }
-    .sidebar .avatar-wrap { text-align: center; margin-bottom: 20px; }
-    .sidebar .avatar-placeholder {
-      width: 180px; height: 180px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto; font-size: 2.8rem; color: #fff; font-weight: 700;
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 4px rgba(30,136,229,.12), 0 8px 24px -6px rgba(30,136,229,.25);
-      letter-spacing: .05em;
-    }
-    .sidebar .avatar-img {
-      width: 180px; height: 180px; border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto; display: block;
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 4px rgba(30,136,229,.12), 0 8px 24px -6px rgba(30,136,229,.25);
-    }
-    .sidebar h2 { text-align: center; font-size: 1.35rem; margin: 14px 0 4px; color: var(--primary); font-weight: 700; }
-    .sidebar .bio {
-      text-align: center; font-size: .84rem; color: var(--text-secondary);
-      margin-bottom: 22px; line-height: 1.65;
-    }
-    .sidebar .info-list { list-style: none; }
-    .sidebar .info-list li {
-      padding: 9px 0; font-size: .84rem; color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .sidebar .info-list li:last-child { border-bottom: none; }
-    .sidebar .info-list li i { width: 18px; text-align: center; color: var(--accent); font-size: .88rem; }
-    .sidebar .social-links {
-      display: flex; justify-content: center; gap: 12px;
-      margin-top: 20px; flex-wrap: wrap;
-    }
-    .sidebar .social-links a {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(30,136,229,.06); color: var(--accent);
-      transition: all .25s; font-size: 1rem;
-      border: 1px solid rgba(30,136,229,.1);
-    }
-    .sidebar .social-links a:hover {
-      background: var(--accent); color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px -2px rgba(30,136,229,.3);
-    }
-
-    /* === MAIN CONTENT === */
-    .main-content { flex: 1; min-width: 0; }
-    section { margin-bottom: 48px; scroll-margin-top: 80px; }
-    .section-title {
-      font-size: 1.25rem; font-weight: 700; color: var(--primary);
-      padding-bottom: 12px; margin-bottom: 22px;
-      border-bottom: none;
-      display: flex; align-items: center; gap: 10px;
-      position: relative;
-    }
-    .section-title::after {
-      content: ''; position: absolute; bottom: 0; left: 0;
-      width: 56px; height: 3px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
-    }
-    .section-title i { color: var(--accent); font-size: 1.1rem; }
-
-    /* === CARDS === */
-    .card {
-      background: var(--card-bg); border-radius: 16px;
-      padding: 28px; margin-bottom: 16px;
-      box-shadow: 0 2px 12px -4px rgba(0,0,0,.05);
-      border: 1px solid var(--border);
-      transition: transform .25s, box-shadow .25s;
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px -8px rgba(0,0,0,.1);
-    }
-
-    .about-text { font-size: .95rem; line-height: 1.85; color: var(--text); }
-    .about-text strong { color: var(--accent); font-weight: 600; }
-
-    /* Publications */
-    .pub-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-item .pub-title { font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; line-height: 1.55; }
-    .pub-item .pub-title a { color: var(--accent); }
-    .pub-item .pub-title a:hover { color: var(--accent-hover); text-decoration: underline; }
-    .pub-item .pub-authors { font-size: .86rem; color: var(--text-secondary); margin-bottom: 4px; }
-    .pub-item .pub-authors .me {
-      font-weight: 700; color: var(--accent);
-      background: rgba(30,136,229,.06);
-      padding: 1px 6px; border-radius: 4px;
-    }
-    .pub-item .pub-venue { font-size: .84rem; color: var(--accent-purple); font-style: italic; margin-bottom: 6px; font-weight: 500; }
-    .pub-item .pub-meta { font-size: .8rem; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .pub-item .pub-meta .tag {
-      display: inline-block; background: rgba(124,58,237,.06); color: var(--accent-purple);
-      padding: 2px 10px; border-radius: 12px; font-size: .72rem; font-weight: 500;
-    }
-    .pub-item .pub-meta .doi-link {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: rgba(30,136,229,.06); color: var(--accent);
-      padding: 2px 10px; border-radius: 12px; font-size: .72rem; font-weight: 600;
-      transition: all .2s;
-    }
-    .pub-item .pub-meta .doi-link:hover { background: var(--accent); color: #fff; }
-
-    /* Education timeline */
-    .edu-timeline { position: relative; padding-left: 32px; }
-    .edu-timeline::before {
-      content: ''; position: absolute; left: 10px; top: 6px; bottom: 6px;
-      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent-purple));
-      opacity: .3;
-    }
-    .edu-item { position: relative; margin-bottom: 26px; }
-    .edu-item:last-child { margin-bottom: 0; }
-    .edu-item::before {
-      content: ''; position: absolute; left: -26px; top: 6px;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--accent); border: 3px solid #fff;
-      box-shadow: 0 0 0 2px rgba(30,136,229,.2), 0 0 8px rgba(30,136,229,.15);
-    }
-    .edu-item .edu-date { font-size: .8rem; color: var(--accent); font-weight: 600; letter-spacing: .02em; }
-    .edu-item .edu-degree { font-size: .95rem; font-weight: 600; color: var(--primary); margin: 3px 0; }
-    .edu-item .edu-school { font-size: .86rem; color: var(--text-secondary); }
-
-    /* Honors */
-    .honor-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
-    .honor-item:last-child { border-bottom: none; }
-    .honor-icon {
-      width: 38px; height: 38px; border-radius: 10px;
-      background: linear-gradient(135deg, #f6d365, #fda085);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 1rem; color: #fff;
-    }
-    .honor-text h4 { font-size: .92rem; color: var(--primary); margin-bottom: 2px; font-weight: 600; }
-    .honor-text p { font-size: .82rem; color: var(--text-muted); }
-
-    /* Research */
-    .research-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
-    .research-item:last-child { border-bottom: none; }
-    .research-num {
-      width: 32px; height: 32px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: #fff; font-size: .85rem; font-weight: 700;
-    }
-    .research-item h4 { font-size: .95rem; color: var(--primary); margin-bottom: 3px; font-weight: 600; }
-    .research-item p { font-size: .84rem; color: var(--text-muted); }
-
-    /* Footer */
-    .footer {
-      text-align: center; padding: 32px 20px;
-      font-size: .8rem; color: var(--text-muted);
-      border-top: 1px solid var(--border); margin-top: 48px;
-    }
-    .footer a { color: var(--accent); }
-    .back-to-top {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(30,136,229,.06); color: var(--accent);
-      margin-top: 12px; transition: all .2s; font-size: .9rem;
-      border: 1px solid rgba(30,136,229,.1);
-    }
-    .back-to-top:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .wrapper { flex-direction: column; padding: 70px 16px 20px; gap: 32px; }
-      .sidebar { width: 100%; position: static; }
-      .sidebar-inner { padding: 24px 20px; }
-      .top-nav .nav-right ul { display: none; }
-      .top-nav .nav-right ul.active {
-        display: flex; flex-direction: column;
-        position: absolute; top: 56px; left: 0; right: 0;
-        background: rgba(245,247,252,.97); padding: 16px 24px;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 4px 16px rgba(0,0,0,.06);
-        backdrop-filter: blur(16px);
-      }
-      .hamburger { display: block; }
-      section { margin-bottom: 36px; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body id="top">
-
-<!-- NAV -->
-<nav class="top-nav">
-  <div class="inner">
-    <span class="brand">
-
-      <span>Jiantao Shen</span>
-    </span>
-    <div class="nav-right">
-      <ul id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#honors">Honors</a></li>
-      </ul>
-      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-controls="nav-links" onclick="document.getElementById('nav-links').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#top">Jiantao Shen</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#honors">Honors</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#education">Education</a>
+          <a href="#honors">Honors</a>
+        </nav>
+      </details>
     </div>
+    <div class="hero">
+      <p class="eyebrow">Academic profile · Peking University</p>
+      <h1>Jiantao Shen</h1>
+      <p class="hero-subtitle">Single-cell multi-omics &nbsp;·&nbsp; Spatial transcriptomics &nbsp;·&nbsp; Cell fate dynamics</p>
+    </div>
+  </header>
+
+  <div class="page">
+    <aside class="sidebar" aria-label="Profile and contact information">
+      <div class="profile-card">
+        <img class="portrait" src="profile.jpg" alt="Portrait of Jiantao Shen" width="400" height="500">
+        <div class="profile-info">
+          <p class="small-label">Current affiliation</p>
+          <h2 class="position">Ph.D. Student</h2>
+          <p class="affiliation">Big Data Center<br>Academy for Advanced Interdisciplinary Studies<br>Peking University</p>
+          <hr class="profile-divider">
+          <a class="contact-item" href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a>
+          <a class="contact-item" href="https://github.com/jiantaoShen12" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <p class="location">Beijing, China</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section id="about" class="section">
+        <h2 class="section-heading">About Me</h2>
+        <p class="about-copy">I am a Ph.D. student at the <strong>Big Data Center, Peking University</strong>. My research focuses on the <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong>, as well as identifying <strong>critical transitions in cell fate decisions</strong>.</p>
+      </section>
+
+      <section id="research" class="section">
+        <h2 class="section-heading">Research Interests</h2>
+        <div class="research-list">
+          <div class="research-item">
+            <span class="research-number">01 / DYNAMICS</span>
+            <h3>Single-cell multi-omics and spatial transcriptomics dynamics</h3>
+          </div>
+          <div class="research-item">
+            <span class="research-number">02 / TRANSITIONS</span>
+            <h3>Critical transition identification in cell fate decisions</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="section">
+        <h2 class="section-heading">Publications</h2>
+
+        <article class="publication">
+          <span class="pub-number">01</span>
+          <div>
+            <h3 class="pub-title"><a href="https://www.biorxiv.org/content/10.64898/2026.10.09.757904v1" target="_blank" rel="noopener noreferrer">MOFI reveals dynamic multi-omics coordination during cell fate progression</a></h3>
+            <p class="pub-authors"><strong>J. Shen</strong>, Z. Zhang, H. Peng, Q. Peng, Z. Wang, R. Liu, P. Zhou</p>
+            <p class="pub-venue">bioRxiv · 2026</p>
+            <div class="pub-meta">
+              <time datetime="2026-10-16">Oct 16, 2026</time>
+              <span class="pub-type">Preprint</span>
+              <a href="https://doi.org/10.64898/2026.10.09.757904" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+              <a href="https://github.com/jiantaoShen12/MOFI" target="_blank" rel="noopener noreferrer">Code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <span class="pub-number">02</span>
+          <div>
+            <h3 class="pub-title"><a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a></h3>
+            <p class="pub-authors">Z. Zhang, Z. Wang, Y. Sun, <strong>J. Shen</strong>, Q. Peng, T. Li, P. Zhou</p>
+            <p class="pub-venue">npj Systems Biology and Applications · 2025</p>
+            <div class="pub-meta">
+              <time datetime="2025-12-04">Dec 4, 2025</time>
+              <span class="pub-type">Journal article</span>
+              <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication">
+          <span class="pub-number">03</span>
+          <div>
+            <h3 class="pub-title">FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</h3>
+            <p class="pub-authors"><strong>J. Shen</strong>, N. Chen, B. Niu, J. Zhong, R. Liu</p>
+            <p class="pub-venue">The Innovation · 2025</p>
+            <div class="pub-meta">
+              <time datetime="2025-06">Jun 2025</time>
+              <span class="pub-type">Journal article</span>
+              <a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="education" class="section">
+        <h2 class="section-heading">Education</h2>
+        <div class="edu-entry">
+          <div>
+            <h3 class="entry-title">Ph.D. Student</h3>
+            <p class="entry-desc">Big Data Center, Academy for Advanced Interdisciplinary Studies<br>Peking University</p>
+          </div>
+          <time class="entry-date">Sep 2026 – Present</time>
+        </div>
+        <div class="edu-entry">
+          <div>
+            <h3 class="entry-title">B.S. in Mathematics and Applied Mathematics (Statistics)</h3>
+            <p class="entry-desc">School of Mathematics, South China University of Technology</p>
+          </div>
+          <time class="entry-date">Sep 2022 – Sep 2026</time>
+        </div>
+      </section>
+
+      <section id="honors" class="section">
+        <h2 class="section-heading">Honors &amp; Awards</h2>
+        <div class="honor-entry">
+          <div><h3 class="entry-title">University-level Outstanding Thesis</h3></div>
+          <time class="entry-date" datetime="2026-06-08">Jun 8, 2026</time>
+        </div>
+      </section>
+    </main>
   </div>
-</nav>
 
-<!-- LAYOUT -->
-<div class="wrapper">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-      <div class="avatar-wrap">
-        <img src="profile.jpg" alt="Jiantao Shen" class="avatar-img">
-      </div>
-      <h2>
-
-        <span>Jiantao Shen</span>
-      </h2>
-      <p class="bio">
-
-        <span>Ph.D. Student<br>Big Data Center<br>Academy for Advanced Interdisciplinary Studies<br>Peking University</span>
-      </p>
-
-      <ul class="info-list">
-        <li>
-          <i class="fas fa-graduation-cap"></i>
-
-          <span>Ph.D. Student, Big Data Center</span>
-        </li>
-        <li>
-          <i class="fas fa-university"></i>
-
-          <span>Peking University</span>
-        </li>
-        <li>
-          <i class="fas fa-map-marker-alt"></i>
-
-          <span>Beijing, China</span>
-        </li>
-        <li><i class="fas fa-envelope"></i> <a href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a></li>
-      </ul>
-
-      <div class="social-links">
-        <a href="mailto:shenjiantao26@stu.pku.edu.cn" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/jiantaoShen12" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-      </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 Jiantao Shen · Peking University</span>
+      <span>Last updated: October 21, 2026</span>
     </div>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main-content">
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2 class="section-title">
-        <i class="fas fa-user"></i>
-
-        <span>About Me</span>
-      </h2>
-      <div class="card">
-        <p class="about-text">
-
-          <span>My research interests focus on <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong> and <strong>critical transition identification in cell fate decisions</strong>.</span>
-        </p>
-      </div>
-    </section>
-
-    <!-- RESEARCH -->
-    <section id="research">
-      <h2 class="section-title">
-        <i class="fas fa-flask"></i>
-
-        <span>Research</span>
-      </h2>
-      <div class="card">
-        <div class="research-item">
-          <div class="research-num" style="background:linear-gradient(135deg,#1E88E5,#7C3AED);">1</div>
-          <div>
-            <h4>
-
-              <span>Dynamics of single-cell multi-omics and spatial transcriptomics</span>
-            </h4>
-
-          </div>
-        </div>
-        <div class="research-item">
-          <div class="research-num" style="background:linear-gradient(135deg,#7C3AED,#f5576c);">2</div>
-          <div>
-            <h4>
-
-              <span>Critical transition identification in single-cell fate decisions</span>
-            </h4>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2 class="section-title">
-        <i class="fas fa-graduation-cap"></i>
-
-        <span>Education</span>
-      </h2>
-      <div class="card">
-        <div class="edu-timeline">
-          <div class="edu-item">
-            <div class="edu-date">2026.09 - <span>Present</span></div>
-            <div class="edu-degree">
-
-              <span>Ph.D. Student</span>
-            </div>
-            <div class="edu-school">
-
-              <span>Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University</span>
-            </div>
-          </div>
-          <div class="edu-item">
-            <div class="edu-date">2022.09 - 2026.09</div>
-            <div class="edu-degree">
-
-              <span>B.S. in Mathematics and Applied Mathematics (Statistics)</span>
-            </div>
-            <div class="edu-school">
-
-              <span>South China University of Technology · School of Mathematics</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-      <h2 class="section-title">
-        <i class="fas fa-book"></i>
-
-        <span>Publications</span>
-      </h2>
-      <div class="card">
-        <div class="pub-item">
-          <div class="pub-title">
-            <a href="https://www.biorxiv.org/content/10.64898/2026.10.09.757904v1" target="_blank" rel="noopener noreferrer">MOFI reveals dynamic multi-omics coordination during cell fate progression</a>
-          </div>
-          <div class="pub-authors">
-            <span class="me">Jiantao Shen</span>, Zhenyi Zhang, Hao Peng, Qiangwei Peng, Zihan Wang, Rui Liu, Peijie Zhou
-          </div>
-          <div class="pub-venue">bioRxiv</div>
-          <div class="pub-meta">
-            <time datetime="2026-10-16">2026-10-16</time>
-            <span class="tag">Preprint</span>
-            <a href="https://doi.org/10.64898/2026.10.09.757904" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-            <a href="https://github.com/jiantaoShen12/MOFI" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fab fa-github"></i> Code</a>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">
-            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a>
-          </div>
-          <div class="pub-authors">
-            Zhenyi Zhang, Zihan Wang, Yuhao Sun, <span class="me">Jiantao Shen</span>, Qiangwei Peng, Tiejun Li, Peijie Zhou
-          </div>
-          <div class="pub-venue">npj Systems Biology and Applications</div>
-          <div class="pub-meta">
-            <span>2025-12-04</span>
-            <span class="tag">Journal article</span>
-            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">
-            FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model
-          </div>
-          <div class="pub-authors">
-            <span class="me">Jiantao Shen</span>, Nan Chen, Bowen Niu, Jiayuan Zhong, Rui Liu
-          </div>
-          <div class="pub-venue">The Innovation</div>
-          <div class="pub-meta">
-            <span>2025-06</span>
-            <span class="tag">Journal article</span>
-            <a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HONORS -->
-    <section id="honors">
-      <h2 class="section-title">
-        <i class="fas fa-trophy"></i>
-
-        <span>Honors & Awards</span>
-      </h2>
-      <div class="card">
-        <div class="honor-item">
-          <div class="honor-icon"><i class="fas fa-award"></i></div>
-          <div class="honor-text">
-            <h4>
-
-              <span>University-level Outstanding Thesis</span>
-            </h4>
-            <p>2026.06.08</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<footer class="footer">
-  <p>
-
-    <span>&copy; 2026 Jiantao Shen | Academy for Advanced Interdisciplinary Studies, Peking University</span>
-  </p>
-  <p style="margin-top:4px;">Last updated: October 21, 2026</p>
-  <a href="#top" class="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
-</footer>
-
+  </footer>
 </body>
 </html>
