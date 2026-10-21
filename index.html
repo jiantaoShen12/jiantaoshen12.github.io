@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>申剑涛 - 个人主页</title>
-  <meta name="description" content="申剑涛 - 北京大学前沿交叉学科研究院 博士生">
+  <title>Jiantao Shen | Academic Homepage</title>
+  <meta name="description" content="Jiantao Shen, Ph.D. student at the Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University. Research in single-cell multi-omics and spatial transcriptomics dynamics.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #1E293B;
@@ -27,7 +27,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Noto Sans SC', 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.8;
@@ -75,18 +75,6 @@
     .top-nav ul li a:hover { color: var(--accent); }
     .top-nav ul li a:hover::after { width: 100%; }
     .hamburger { display: none; background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--primary); }
-
-    /* === LANG TOGGLE === */
-    .lang-toggle {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 5px 14px; border-radius: 20px;
-      background: rgba(30,136,229,.08); border: 1px solid rgba(30,136,229,.15);
-      cursor: pointer; font-size: .78rem; font-weight: 600;
-      color: var(--accent); transition: all .2s; white-space: nowrap;
-      letter-spacing: .03em;
-    }
-    .lang-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .lang-toggle i { font-size: .85rem; }
 
     /* === LAYOUT === */
     .wrapper {
@@ -155,7 +143,7 @@
 
     /* === MAIN CONTENT === */
     .main-content { flex: 1; min-width: 0; }
-    section { margin-bottom: 48px; }
+    section { margin-bottom: 48px; scroll-margin-top: 80px; }
     .section-title {
       font-size: 1.25rem; font-weight: 700; color: var(--primary);
       padding-bottom: 12px; margin-bottom: 22px;
@@ -289,28 +277,24 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
 
 <!-- NAV -->
 <nav class="top-nav">
   <div class="inner">
     <span class="brand">
-      <span data-lang="zh">申剑涛</span>
-      <span data-lang="en" style="display:none;">Jiantao Shen</span>
+
+      <span>Jiantao Shen</span>
     </span>
     <div class="nav-right">
       <ul id="nav-links">
-        <li><a href="#about" data-lang="zh">关于我</a><a href="#about" data-lang="en" style="display:none;">About</a></li>
-        <li><a href="#research" data-lang="zh">科研兴趣</a><a href="#research" data-lang="en" style="display:none;">Research</a></li>
-        <li><a href="#education" data-lang="zh">教育背景</a><a href="#education" data-lang="en" style="display:none;">Education</a></li>
-        <li><a href="#publications" data-lang="zh">出版物</a><a href="#publications" data-lang="en" style="display:none;">Publications</a></li>
-        <li><a href="#honors" data-lang="zh">荣誉奖项</a><a href="#honors" data-lang="en" style="display:none;">Honors</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#honors">Honors</a></li>
       </ul>
-      <button class="lang-toggle" onclick="toggleLang()" title="Switch language">
-        <i class="fas fa-globe"></i>
-        <span id="lang-label">EN</span>
-      </button>
-      <button class="hamburger" onclick="document.getElementById('nav-links').classList.toggle('active')">
+      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-controls="nav-links" onclick="document.getElementById('nav-links').classList.toggle('active')">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -324,39 +308,39 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
       <div class="avatar-wrap">
-        <img src="照片.jpg" alt="申剑涛" class="avatar-img">
+        <img src="profile.jpg" alt="Jiantao Shen" class="avatar-img">
       </div>
       <h2>
-        <span data-lang="zh">申剑涛</span>
-        <span data-lang="en" style="display:none;">Jiantao Shen</span>
+
+        <span>Jiantao Shen</span>
       </h2>
       <p class="bio">
-        <span data-lang="zh">北京大学 · 前沿交叉学科研究院<br>大数据科学中心 博士生</span>
-        <span data-lang="en" style="display:none;">Ph.D. Candidate<br>Center for Big Data Science<br>Academy for Advanced Interdisciplinary Studies<br>Peking University</span>
+
+        <span>Ph.D. Student<br>Big Data Center<br>Academy for Advanced Interdisciplinary Studies<br>Peking University</span>
       </p>
 
       <ul class="info-list">
         <li>
           <i class="fas fa-graduation-cap"></i>
-          <span data-lang="zh">博士生（大数据科学中心）</span>
-          <span data-lang="en" style="display:none;">Ph.D. Candidate, Center for Big Data Science</span>
+
+          <span>Ph.D. Student, Big Data Center</span>
         </li>
         <li>
           <i class="fas fa-university"></i>
-          <span data-lang="zh">北京大学</span>
-          <span data-lang="en" style="display:none;">Peking University</span>
+
+          <span>Peking University</span>
         </li>
         <li>
           <i class="fas fa-map-marker-alt"></i>
-          <span data-lang="zh">北京, 中国</span>
-          <span data-lang="en" style="display:none;">Beijing, China</span>
+
+          <span>Beijing, China</span>
         </li>
         <li><i class="fas fa-envelope"></i> <a href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a></li>
       </ul>
 
       <div class="social-links">
         <a href="mailto:shenjiantao26@stu.pku.edu.cn" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/jiantaoShen12" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="#" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
       </div>
     </div>
@@ -369,13 +353,13 @@
     <section id="about">
       <h2 class="section-title">
         <i class="fas fa-user"></i>
-        <span data-lang="zh">关于我</span>
-        <span data-lang="en" style="display:none;">About Me</span>
+
+        <span>About Me</span>
       </h2>
       <div class="card">
         <p class="about-text">
-          <span data-lang="zh">我的研究兴趣集中在<strong>单细胞多组学和空间转录组数据的动力学建模</strong>与<strong>细胞命运决策的临界识别</strong>。</span>
-          <span data-lang="en" style="display:none;">My research interests focus on <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong> and <strong>critical transition identification in cell fate decisions</strong>.</span>
+
+          <span>My research interests focus on <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong> and <strong>critical transition identification in cell fate decisions</strong>.</span>
         </p>
       </div>
     </section>
@@ -384,28 +368,28 @@
     <section id="research">
       <h2 class="section-title">
         <i class="fas fa-flask"></i>
-        <span data-lang="zh">科研兴趣</span>
-        <span data-lang="en" style="display:none;">Research</span>
+
+        <span>Research</span>
       </h2>
       <div class="card">
         <div class="research-item">
           <div class="research-num" style="background:linear-gradient(135deg,#1E88E5,#7C3AED);">1</div>
           <div>
             <h4>
-              <span data-lang="zh">单细胞多组学和空间转录组的动力学</span>
-              <span data-lang="en" style="display:none;">Dynamics of single-cell multi-omics and spatial transcriptomics</span>
+
+              <span>Dynamics of single-cell multi-omics and spatial transcriptomics</span>
             </h4>
-            <p data-lang="zh">Spatiotemporal dynamics of single-cell and spatial transcriptomics</p>
+
           </div>
         </div>
         <div class="research-item">
           <div class="research-num" style="background:linear-gradient(135deg,#7C3AED,#f5576c);">2</div>
           <div>
             <h4>
-              <span data-lang="zh">单细胞命运决策的临界识别</span>
-              <span data-lang="en" style="display:none;">Critical transition identification in single-cell fate decisions</span>
+
+              <span>Critical transition identification in single-cell fate decisions</span>
             </h4>
-            <p data-lang="zh">Critical transition identification in single-cell fate decisions</p>
+
           </div>
         </div>
       </div>
@@ -415,31 +399,31 @@
     <section id="education">
       <h2 class="section-title">
         <i class="fas fa-graduation-cap"></i>
-        <span data-lang="zh">教育背景</span>
-        <span data-lang="en" style="display:none;">Education</span>
+
+        <span>Education</span>
       </h2>
       <div class="card">
         <div class="edu-timeline">
           <div class="edu-item">
-            <div class="edu-date">2026.09 - <span data-lang="zh">至今</span><span data-lang="en" style="display:none;">Present</span></div>
+            <div class="edu-date">2026.09 - <span>Present</span></div>
             <div class="edu-degree">
-              <span data-lang="zh">博士生</span>
-              <span data-lang="en" style="display:none;">Ph.D. Candidate</span>
+
+              <span>Ph.D. Student</span>
             </div>
             <div class="edu-school">
-              <span data-lang="zh">北京大学 · 前沿交叉学科研究院 · 大数据科学中心</span>
-              <span data-lang="en" style="display:none;">Center for Big Data Science, Academy for Advanced Interdisciplinary Studies, Peking University</span>
+
+              <span>Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University</span>
             </div>
           </div>
           <div class="edu-item">
             <div class="edu-date">2022.09 - 2026.09</div>
             <div class="edu-degree">
-              <span data-lang="zh">理学学士（数学与应用数学 · 统计学方向）</span>
-              <span data-lang="en" style="display:none;">B.S. in Mathematics and Applied Mathematics (Statistics)</span>
+
+              <span>B.S. in Mathematics and Applied Mathematics (Statistics)</span>
             </div>
             <div class="edu-school">
-              <span data-lang="zh">华南理工大学 · 数学学院</span>
-              <span data-lang="en" style="display:none;">South China University of Technology · School of Mathematics</span>
+
+              <span>South China University of Technology · School of Mathematics</span>
             </div>
           </div>
         </div>
@@ -450,13 +434,29 @@
     <section id="publications">
       <h2 class="section-title">
         <i class="fas fa-book"></i>
-        <span data-lang="zh">出版物</span>
-        <span data-lang="en" style="display:none;">Publications</span>
+
+        <span>Publications</span>
       </h2>
       <div class="card">
         <div class="pub-item">
           <div class="pub-title">
-            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a>
+            <a href="https://www.biorxiv.org/content/10.64898/2026.10.09.757904v1" target="_blank" rel="noopener noreferrer">MOFI reveals dynamic multi-omics coordination during cell fate progression</a>
+          </div>
+          <div class="pub-authors">
+            <span class="me">Jiantao Shen</span>, Zhenyi Zhang, Hao Peng, Qiangwei Peng, Zihan Wang, Rui Liu, Peijie Zhou
+          </div>
+          <div class="pub-venue">bioRxiv</div>
+          <div class="pub-meta">
+            <time datetime="2026-10-16">2026-10-16</time>
+            <span class="tag">Preprint</span>
+            <a href="https://doi.org/10.64898/2026.10.09.757904" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+            <a href="https://github.com/jiantaoShen12/MOFI" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a>
           </div>
           <div class="pub-authors">
             Zhenyi Zhang, Zihan Wang, Yuhao Sun, <span class="me">Jiantao Shen</span>, Qiangwei Peng, Tiejun Li, Peijie Zhou
@@ -465,7 +465,7 @@
           <div class="pub-meta">
             <span>2025-12-04</span>
             <span class="tag">Journal article</span>
-            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+            <a href="https://doi.org/10.1038/s41540-025-00624-9" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
           </div>
         </div>
 
@@ -480,7 +480,7 @@
           <div class="pub-meta">
             <span>2025-06</span>
             <span class="tag">Journal article</span>
-            <a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+            <a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" rel="noopener noreferrer" class="doi-link"><i class="fas fa-external-link-alt"></i> DOI</a>
           </div>
         </div>
       </div>
@@ -490,16 +490,16 @@
     <section id="honors">
       <h2 class="section-title">
         <i class="fas fa-trophy"></i>
-        <span data-lang="zh">荣誉奖项</span>
-        <span data-lang="en" style="display:none;">Honors & Awards</span>
+
+        <span>Honors & Awards</span>
       </h2>
       <div class="card">
         <div class="honor-item">
           <div class="honor-icon"><i class="fas fa-award"></i></div>
           <div class="honor-text">
             <h4>
-              <span data-lang="zh">校级优秀论文</span>
-              <span data-lang="en" style="display:none;">University-level Outstanding Thesis</span>
+
+              <span>University-level Outstanding Thesis</span>
             </h4>
             <p>2026.06.08</p>
           </div>
@@ -512,25 +512,12 @@
 
 <footer class="footer">
   <p>
-    <span data-lang="zh">&copy; 2025 申剑涛 | 北京大学 前沿交叉学科研究院</span>
-    <span data-lang="en" style="display:none;">&copy; 2025 Jiantao Shen | Academy for Advanced Interdisciplinary Studies, Peking University</span>
+
+    <span>&copy; 2026 Jiantao Shen | Academy for Advanced Interdisciplinary Studies, Peking University</span>
   </p>
-  <p style="margin-top:4px;">Last updated: June 2025</p>
+  <p style="margin-top:4px;">Last updated: October 21, 2026</p>
   <a href="#top" class="back-to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
 </footer>
-
-<script>
-  let currentLang = 'zh';
-
-  function toggleLang() {
-    currentLang = currentLang === 'zh' ? 'en' : 'zh';
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
-    });
-    document.getElementById('lang-label').textContent = currentLang === 'zh' ? 'EN' : '中文';
-    document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
-  }
-</script>
 
 </body>
 </html>

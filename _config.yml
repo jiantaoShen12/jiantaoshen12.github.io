@@ -1,6 +1,6 @@
-title: "申剑涛's Academic Homepage"
-description: "华南理工大学 数学学院 数学与应用数学（统计学）22级本科生"
-url: "https://shenjiantao.github.io"
+title: "Jiantao Shen | Academic Homepage"
+description: "Jiantao Shen, Ph.D. student at the Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University."
+url: "https://jiantaoshen12.github.io"
 baseurl: ""
 
 # Build settings
@@ -8,5 +8,5 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
 # Social icons
-github_username: shenjiantao
+github_username: jiantaoShen12
 email: "shenjiantao26@stu.pku.edu.cn"
