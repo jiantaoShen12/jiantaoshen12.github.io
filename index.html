@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#203d2d">
   <meta name="description" content="Jiantao Shen is a Ph.D. student at the Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University. Research in single-cell multi-omics, spatial transcriptomics, and cell fate dynamics.">
   <title>Jiantao Shen | Academic Homepage</title>
+  <link rel="canonical" href="https://jiantaoshen12.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
@@ -314,9 +315,38 @@
     @media (max-width: 370px) {
       .site-kind { display: none; }
     }
+    /* Academic updates and direct access to the CV. */
+    .skip-link { position: absolute; top: -80px; left: 16px; z-index: 10; padding: 10px 16px; background: white; color: var(--forest); }
+    .skip-link:focus { top: 8px; }
+    .about-copy + .about-copy { margin-top: 12px; }
+    .about-copy a, .news-copy a { color: var(--forest); text-decoration: underline; text-decoration-color: #a5baa0; text-underline-offset: 3px; }
+    .desktop-nav { gap: 20px; }
+    .desktop-nav .nav-cv { padding: 4px 12px; border: 1px solid #8ba17b; border-radius: 3px; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .quick-links a { display: inline-flex; align-items: center; min-height: 36px; padding: 5px 13px; border: 1px solid #b4c6ad; border-radius: 3px; color: var(--forest); font-size: 11.5px; font-weight: 600; }
+    .quick-links .primary-link { background: var(--forest); border-color: var(--forest); color: white; }
+    .quick-links a:hover { background: var(--pale-leaf); color: var(--forest); }
+    .news-list { margin: 0; padding: 0; list-style: none; }
+    .news-item { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 17px; padding: 10px 0; border-top: 1px solid var(--border); }
+    .news-item:first-child { border-top: 0; padding-top: 2px; }
+    .news-date { font-size: 11px; color: var(--muted); padding-top: 2px; }
+    .news-copy { margin: 0; font-size: 12.5px; line-height: 1.75; }
+    .pub-title .text-link:hover { text-decoration: underline; }
+    @media (max-width: 980px) {
+      .desktop-nav { display: none; }
+      .mobile-menu { display: block; position: relative; font-size: 12px; }
+      .mobile-menu summary { list-style: none; cursor: pointer; padding: 10px 0 10px 14px; color: #f0f4eb; }
+      .mobile-menu summary::-webkit-details-marker { display: none; }
+      .mobile-menu summary::after { content: " +"; color: var(--leaf); }
+      .mobile-menu[open] summary::after { content: " −"; }
+      .mobile-menu nav { position: absolute; right: 0; top: 37px; min-width: 175px; z-index: 3; background: var(--forest-dark); padding: 10px 16px; border: 1px solid #49634a; border-radius: 4px; }
+      .mobile-menu nav a { display: block; color: #f0f4eb; padding: 7px 0; }
+    }
+    @media (max-width: 420px) { .news-item { grid-template-columns: 70px minmax(0,1fr); gap: 10px; } }
   </style>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="header-top">
       <div class="nav-shell">
@@ -326,20 +356,24 @@
         </div>
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#news">News</a>
           <a href="#publications">Publications</a>
           <a href="#research">Research</a>
           <a href="#education">Education</a>
           <a href="#honors">Honors</a>
+          <a class="nav-cv" href="cv.html">CV</a>
           <a href="https://github.com/jiantaoShen12/Musings" target="_blank" rel="noopener noreferrer">Musings ↗</a>
         </nav>
         <details class="mobile-menu">
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
             <a href="#about">About</a>
+            <a href="#news">News</a>
             <a href="#publications">Publications</a>
             <a href="#research">Research</a>
             <a href="#education">Education</a>
             <a href="#honors">Honors</a>
+            <a href="cv.html">CV</a>
           <a href="https://github.com/jiantaoShen12/Musings" target="_blank" rel="noopener noreferrer">Musings ↗</a>
           </nav>
         </details>
@@ -370,16 +404,33 @@
           <hr class="profile-divider">
           <a class="contact-item" href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a>
           <a class="contact-item" href="https://github.com/jiantaoShen12" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="contact-item" href="cv.html">Curriculum Vitae</a>
+          <a class="contact-item" href="assets/pdf/Jiantao_Shen_CV.pdf" download>Download CV · PDF</a>
           <a class="contact-item" href="https://github.com/jiantaoShen12/Musings" target="_blank" rel="noopener noreferrer">Musings · Personal essays</a>
           <p class="location">Beijing, China</p>
         </div>
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main" id="main-content">
       <section id="about" class="section">
         <h2 class="section-heading">About Me</h2>
-        <p class="about-copy">I am a Ph.D. student at the <strong>Big Data Center, Peking University</strong>. My research focuses on the <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong>, as well as identifying <strong>critical transitions in cell fate decisions</strong>.</p>
+        <p class="about-copy">I am a Ph.D. student at the <strong>Big Data Center, Academy for Advanced Interdisciplinary Studies, Peking University</strong>, advised by <a href="https://cliffzhou92.github.io/" target="_blank" rel="noopener noreferrer">Prof. Peijie Zhou</a>. I received my B.S. in Mathematics and Applied Mathematics (Statistics) from <strong>South China University of Technology</strong> in 2026, where I was advised by <strong>Rui Liu</strong>.</p>
+        <p class="about-copy">My research focuses on the <strong>dynamics of single-cell multi-omics and spatial transcriptomics</strong>, as well as identifying <strong>critical transitions in cell fate decisions</strong>.</p>
+        <div class="quick-links" aria-label="CV and contact links">
+          <a class="primary-link" href="cv.html">View CV <span aria-hidden="true">&nbsp;↗</span></a>
+          <a href="assets/pdf/Jiantao_Shen_CV.pdf" download>Download CV · PDF</a>
+          <a href="mailto:shenjiantao26@stu.pku.edu.cn">Email me</a>
+        </div>
+      </section>
+
+      <section id="news" class="section">
+        <h2 class="section-heading">News</h2>
+        <ul class="news-list">
+          <li class="news-item"><time class="news-date" datetime="2026-10">Oct 2026</time><p class="news-copy">Our preprint <a href="https://doi.org/10.64898/2026.10.09.757904" target="_blank" rel="noopener noreferrer">MOFI</a> is available on bioRxiv, with <a href="https://github.com/jiantaoShen12/MOFI" target="_blank" rel="noopener noreferrer">code on GitHub</a>.</p></li>
+          <li class="news-item"><time class="news-date" datetime="2026-09">Sep 2026</time><p class="news-copy">I joined the Big Data Center at Peking University as a Ph.D. student, advised by Prof. Peijie Zhou.</p></li>
+          <li class="news-item"><time class="news-date" datetime="2026-06">Jun 2026</time><p class="news-copy">I received a University-level Outstanding Thesis award.</p></li>
+        </ul>
       </section>
 
       <section id="publications" class="section">
@@ -417,7 +468,7 @@
         <article class="publication">
           <span class="pub-number">03</span>
           <div>
-            <h3 class="pub-title">FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</h3>
+            <h3 class="pub-title"><a href="https://doi.org/10.1016/j.xinn.2025.101010" target="_blank" rel="noopener noreferrer">FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</a></h3>
             <p class="pub-authors"><strong>J. Shen</strong>, N. Chen, B. Niu, J. Zhong, R. Liu</p>
             <p class="pub-venue">The Innovation · 2025</p>
             <div class="pub-meta">
@@ -448,14 +499,14 @@
         <div class="edu-entry">
           <div>
             <h3 class="entry-title">Ph.D. Student</h3>
-            <p class="entry-desc">Big Data Center, Academy for Advanced Interdisciplinary Studies<br>Peking University</p>
+            <p class="entry-desc">Big Data Center, Academy for Advanced Interdisciplinary Studies<br>Peking University<br>Advisor: Prof. Peijie Zhou</p>
           </div>
           <time class="entry-date">Sep 2026 – Present</time>
         </div>
         <div class="edu-entry">
           <div>
             <h3 class="entry-title">B.S. in Mathematics and Applied Mathematics (Statistics)</h3>
-            <p class="entry-desc">School of Mathematics, South China University of Technology</p>
+            <p class="entry-desc">School of Mathematics, South China University of Technology<br>Advisor: Rui Liu</p>
           </div>
           <time class="entry-date">Sep 2022 – Sep 2026</time>
         </div>
@@ -474,7 +525,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>© 2026 Jiantao Shen · Peking University</span>
-      <span>Last updated: November 2, 2026</span>
+      <span><a href="cv.html">Curriculum Vitae</a> · Last updated: November 13, 2026</span>
     </div>
   </footer>
 </body>

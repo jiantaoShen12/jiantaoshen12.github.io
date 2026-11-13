@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#203d2d">
+  <meta name="description" content="Curriculum vitae of Jiantao Shen, Ph.D. student at Peking University. Education, research interests, publications and honors.">
+  <link rel="canonical" href="https://jiantaoshen12.github.io/cv.html">
+  <title>CV | Jiantao Shen</title>
+  <style>
+    :root { --forest: #203d2d; --muted: #58685c; --line: #dce5da; --paper: #f7f8f3; --serif: Georgia, "Times New Roman", serif; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: #25382c; background: var(--paper); font: 14px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--forest); text-underline-offset: 3px; text-decoration-color: #a5baa0; }
+    a:hover { text-decoration-color: var(--forest); }
+    a:focus-visible, summary:focus-visible { outline: 3px solid #8fa874; outline-offset: 4px; }
+    .skip-link { position: absolute; top: -80px; left: 16px; z-index: 5; background: white; padding: 10px 16px; }
+    .skip-link:focus { top: 8px; }
+    .site-header { background: var(--forest); color: white; }
+    .nav-shell { max-width: 1080px; min-height: 57px; margin: auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .wordmark { color: white; font: 600 25px/1 var(--serif); text-decoration: none; letter-spacing: -.065em; }
+    .wordmark span { color: #b6ce90; }
+    .nav-shell nav { display: flex; gap: 25px; align-items: center; }
+    .nav-shell nav a { color: #e7efe3; text-decoration: none; font-size: 12px; }
+    .nav-shell nav [aria-current] { border-bottom: 1px solid #b6ce90; padding-bottom: 3px; }
+    .cv-shell { max-width: 1080px; margin: auto; padding: 42px 24px 60px; display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 48px; }
+    .cv-sidebar > div { position: sticky; top: 25px; }
+    .eyebrow { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .13em; margin: 0 0 16px; }
+    .cv-sidebar nav { display: flex; flex-direction: column; gap: 10px; font-size: 12px; margin-bottom: 25px; }
+    .cv-sidebar nav a { text-decoration: none; }
+    .download { display: inline-block; background: var(--forest); color: white; padding: 8px 14px; border: 1px solid var(--forest); border-radius: 3px; text-decoration: none; font-size: 12px; font-weight: 600; }
+    .download:hover { background: #365440; }
+    .updated { color: var(--muted); font-size: 11px; line-height: 1.7; margin-top: 13px; }
+    .cv-sheet { min-width: 0; background: white; border: 1px solid var(--line); border-top: 3px solid var(--forest); padding: 34px 38px 30px; }
+    h1 { font: 500 38px/1.2 var(--serif); letter-spacing: -.035em; margin: 0 0 10px; color: var(--forest); }
+    .cv-affiliation { font-size: 12.5px; margin: 0 0 10px; color: var(--muted); }
+    .cv-contact { margin: 0 0 3px; font-size: 11.5px; overflow-wrap: anywhere; }
+    section { margin-top: 25px; scroll-margin-top: 20px; }
+    h2 { font: 500 21px/1.3 var(--serif); color: var(--forest); margin: 0 0 13px; padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+    .cv-entry + .cv-entry { margin-top: 16px; }
+    h3 { font-size: 13px; font-weight: 600; line-height: 1.6; margin: 0 0 3px; }
+    .cv-entry p { margin: 0 0 3px; font-size: 12px; line-height: 1.7; }
+    .cv-date { font-size: 11px !important; color: var(--muted); }
+    .cv-note { color: var(--muted); }
+    .cv-links { font-size: 11px !important; overflow-wrap: anywhere; }
+    .cv-footer { max-width: 1080px; margin: auto; padding: 0 24px 25px; color: var(--muted); font-size: 11px; text-align: right; }
+    @media (max-width: 850px) {
+      .cv-shell { grid-template-columns: 1fr; gap: 22px; padding-top: 26px; }
+      .cv-sidebar > div { position: static; }
+      .cv-sidebar nav { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
+      .eyebrow { margin-bottom: 8px; }
+      .updated { display: inline-block; margin: 0 0 0 15px; }
+    }
+    @media (max-width: 520px) {
+      .nav-shell { padding-inline: 18px; gap: 15px; }
+      .nav-shell nav { gap: 17px; }
+      .cv-shell { padding: 23px 18px 35px; }
+      .cv-sheet { padding: 25px 20px; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 20px; }
+      .updated { font-size: 10px; margin-left: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @page { size: A4; margin: 16mm; }
+    @media print {
+      body { background: white; font-size: 10pt; color: #111; }
+      .site-header, .cv-sidebar, .cv-footer, .skip-link { display: none; }
+      .cv-shell { display: block; margin: 0; padding: 0; max-width: none; }
+      .cv-sheet { border: 0; padding: 0; }
+      h1 { font-size: 25pt; }
+      h2 { font-size: 14pt; break-after: avoid; }
+      section { margin-top: 15px; }
+      .cv-entry { break-inside: avoid; }
+      .cv-entry p, .cv-affiliation, .cv-contact { font-size: 9pt; line-height: 1.45; }
+      h3 { font-size: 10pt; }
+      .cv-entry + .cv-entry { margin-top: 10px; }
+      a { color: #111; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#cv">Skip to CV</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="index.html" aria-label="Jiantao Shen homepage">JS<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="cv.html" aria-current="page">CV</a>
+      </nav>
+    </div>
+  </header>
+  <div class="cv-shell">
+    <aside class="cv-sidebar" aria-label="CV navigation and download">
+      <div>
+        <p class="eyebrow">Curriculum Vitae</p>
+        <nav aria-label="CV sections">
+          <a href="#education">Education</a>
+          <a href="#research">Research interests</a>
+          <a href="#publications">Publications</a>
+          <a href="#honors">Honors &amp; awards</a>
+        </nav>
+        <a class="download" href="assets/pdf/Jiantao_Shen_CV.pdf" download>Download PDF ↓</a>
+        <p class="updated">Updated November 13, 2026</p>
+      </div>
+    </aside>
+    <!-- Keep this main element well-formed: scripts/build_cv.py reads it as the PDF source. -->
+    <main class="cv-sheet" id="cv" data-updated="November 13, 2026">
+      <header>
+        <h1>Jiantao Shen</h1>
+        <p class="cv-affiliation">Ph.D. Student · Big Data Center<br />Academy for Advanced Interdisciplinary Studies, Peking University<br />Beijing, China</p>
+        <p class="cv-contact"><a href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a></p>
+        <p class="cv-contact"><a href="https://jiantaoshen12.github.io/">jiantaoshen12.github.io</a> · <a href="https://github.com/jiantaoShen12">github.com/jiantaoShen12</a></p>
+      </header>
+      <section id="education">
+        <h2>Education</h2>
+        <div class="cv-entry">
+          <p class="cv-date">Sep 2026 - Present</p>
+          <h3>Ph.D. Student, Peking University</h3>
+          <p>Big Data Center, Academy for Advanced Interdisciplinary Studies</p>
+          <p>Advisor: <a href="https://cliffzhou92.github.io/">Prof. Peijie Zhou</a></p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-date">Sep 2022 - Sep 2026</p>
+          <h3>B.S. in Mathematics and Applied Mathematics (Statistics)</h3>
+          <p>School of Mathematics, South China University of Technology</p>
+          <p>Advisor: Rui Liu</p>
+        </div>
+      </section>
+      <section id="research">
+        <h2>Research Interests</h2>
+        <div class="cv-entry">
+          <p>Single-cell multi-omics and spatial transcriptomics dynamics; critical transition identification in cell fate decisions.</p>
+        </div>
+      </section>
+      <section id="publications">
+        <h2>Publications &amp; Preprints</h2>
+        <div class="cv-entry">
+          <h3>MOFI reveals dynamic multi-omics coordination during cell fate progression</h3>
+          <p><strong>J. Shen</strong>, Z. Zhang, H. Peng, Q. Peng, Z. Wang, R. Liu, P. Zhou.</p>
+          <p class="cv-note"><em>bioRxiv</em>, 2026. Preprint.</p>
+          <p class="cv-links"><a href="https://doi.org/10.64898/2026.10.09.757904">doi:10.64898/2026.10.09.757904</a> · <a href="https://github.com/jiantaoShen12/MOFI">Code</a></p>
+        </div>
+        <div class="cv-entry">
+          <h3>Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</h3>
+          <p>Z. Zhang, Z. Wang, Y. Sun, <strong>J. Shen</strong>, Q. Peng, T. Li, P. Zhou.</p>
+          <p class="cv-note"><em>npj Systems Biology and Applications</em>, 2025.</p>
+          <p class="cv-links"><a href="https://doi.org/10.1038/s41540-025-00624-9">doi:10.1038/s41540-025-00624-9</a></p>
+        </div>
+        <div class="cv-entry">
+          <h3>FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</h3>
+          <p><strong>J. Shen</strong>, N. Chen, B. Niu, J. Zhong, R. Liu.</p>
+          <p class="cv-note"><em>The Innovation</em>, 2025.</p>
+          <p class="cv-links"><a href="https://doi.org/10.1016/j.xinn.2025.101010">doi:10.1016/j.xinn.2025.101010</a></p>
+        </div>
+      </section>
+      <section id="honors">
+        <h2>Honors &amp; Awards</h2>
+        <div class="cv-entry">
+          <p class="cv-date">Jun 8, 2026</p>
+          <h3>University-level Outstanding Thesis</h3>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="cv-footer">© 2026 Jiantao Shen · <a href="index.html">Back to homepage</a></footer>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Keep downloadable PDFs byte-identical on Windows and on GitHub Pages.
+*.pdf binary

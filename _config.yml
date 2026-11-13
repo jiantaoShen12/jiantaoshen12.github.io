@@ -10,3 +10,11 @@ permalink: /blog/:year/:month/:day/:title/
 # Social icons
 github_username: jiantaoShen12
 email: "shenjiantao26@stu.pku.edu.cn"
+
+# Maintenance files are not part of the public website.
+exclude:
+  - AGENTS.md
+  - DIRECTORY_GUIDE.md
+  - README.md
+  - scripts
+  - work
