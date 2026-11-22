@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#203d2d">
-  <meta name="description" content="Curriculum vitae of Jiantao Shen, Ph.D. student at Peking University. Education, research interests, publications and honors.">
+  <meta name="description" content="Research resume of Jiantao Shen, PhD student at Peking University. Multimodal learning, dynamical systems, flow matching and LLM agent research interests.">
   <link rel="canonical" href="https://jiantaoshen12.github.io/cv.html">
   <title>CV | Jiantao Shen</title>
   <style>
@@ -77,6 +77,49 @@
       .cv-entry + .cv-entry { margin-top: 10px; }
       a { color: #111; text-decoration: none; }
     }
+  
+    /* Industry research resume. The public homepage remains unchanged. */
+    .cv-sheet { font-family: Arial, Helvetica, sans-serif; padding: 30px 34px; color: #151515; }
+    .cv-sheet h1 { color: #000; font: 700 34px/1.15 Arial, Helvetica, sans-serif; letter-spacing: -.025em; margin-bottom: 5px; }
+    .cv-sheet h2 { color: #000; font: 700 12px/1.35 Arial, Helvetica, sans-serif; letter-spacing: .075em; text-transform: uppercase; padding-bottom: 5px; margin-bottom: 10px; }
+    .cv-sheet h3 { color: #000; font: 700 12px/1.45 Arial, Helvetica, sans-serif; padding-right: 132px; margin-bottom: 2px; }
+    .cv-sheet .cv-role { color: #000; font-size: 13px; margin: 0 0 7px; }
+    .cv-sheet .cv-contact { font-size: 11.5px; line-height: 1.6; }
+    .cv-profile { font-size: 12px; line-height: 1.7; margin: 13px 0 0; }
+    .cv-sheet section { margin-top: 20px; }
+    .cv-entry { position: relative; }
+    .cv-entry + .cv-entry { margin-top: 11px; }
+    .cv-entry .cv-date { position: absolute; top: 0; right: 0; margin: 0; line-height: 1.6; }
+    .cv-sheet .cv-project-meta { font-size: 11px; margin: 0 0 4px; color: #47564b; }
+    .cv-sheet ul { margin: 4px 0 0; padding-left: 17px; }
+    .cv-sheet li { padding-left: 1px; font-size: 12px; line-height: 1.65; margin: 3px 0; }
+    .cv-publication h3 { padding-right: 0; font-size: 11.7px; }
+    .cv-publication h3 a { color: #000; text-decoration: none; }
+    .cv-publication h3 a:hover { text-decoration: underline; }
+    .cv-sheet .cv-authors, .cv-sheet .cv-venue { font-size: 11px; line-height: 1.55; margin-bottom: 1px; }
+    .cv-sheet .cv-venue { color: #3e4a41; }
+    .cv-sidebar .updated { margin-left: 0; display: block; }
+    @media (max-width: 520px) {
+      .cv-sheet { padding: 24px 19px; }
+      .cv-sheet h1 { font-size: 31px; }
+      .cv-sheet h3 { padding-right: 0; }
+      .cv-entry .cv-date { position: static; margin-bottom: 2px; }
+      .cv-sheet .cv-contact { font-size: 11px; }
+    }
+    @page { size: Letter; margin: 13mm 15mm; }
+    @media print {
+      .cv-sheet { padding: 0; font-size: 10.5pt; }
+      .cv-sheet h1 { font-size: 25pt; }
+      .cv-sheet h2 { font-size: 10pt; margin-bottom: 5px; }
+      .cv-sheet h3 { font-size: 10.5pt; }
+      .cv-sheet section { margin-top: 10px; }
+      .cv-sheet .cv-role, .cv-sheet p, .cv-sheet li { font-size: 10pt; line-height: 1.25; }
+      .cv-sheet .cv-contact, .cv-sheet .cv-project-meta, .cv-sheet .cv-authors, .cv-sheet .cv-venue { font-size: 9pt; }
+      .cv-entry + .cv-entry { margin-top: 7px; }
+      .cv-entry .cv-date { position: absolute; }
+      .cv-profile { margin-top: 8px; }
+      a { color: #000 !important; }
+    }
   </style>
 </head>
 <body>
@@ -97,69 +140,93 @@
         <p class="eyebrow">Curriculum Vitae</p>
         <nav aria-label="CV sections">
           <a href="#education">Education</a>
-          <a href="#research">Research interests</a>
+          <a href="#research">Selected research</a>
+          <a href="#skills">Technical skills</a>
           <a href="#publications">Publications</a>
-          <a href="#honors">Honors &amp; awards</a>
+          <a href="#interests">Research interests</a>
         </nav>
         <a class="download" href="assets/pdf/Jiantao_Shen_CV.pdf" download>Download PDF ↓</a>
-        <p class="updated">Updated November 13, 2026</p>
+        <p class="updated">Updated November 22, 2026</p>
       </div>
     </aside>
     <!-- Keep this main element well-formed: scripts/build_cv.py reads it as the PDF source. -->
-    <main class="cv-sheet" id="cv" data-updated="November 13, 2026">
+    <main class="cv-sheet" id="cv" data-updated="November 22, 2026">
       <header>
         <h1>Jiantao Shen</h1>
-        <p class="cv-affiliation">Ph.D. Student · Big Data Center<br />Academy for Advanced Interdisciplinary Studies, Peking University<br />Beijing, China</p>
-        <p class="cv-contact"><a href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a></p>
-        <p class="cv-contact"><a href="https://jiantaoshen12.github.io/">jiantaoshen12.github.io</a> · <a href="https://github.com/jiantaoShen12">github.com/jiantaoShen12</a></p>
+        <p class="cv-role">PhD Student at Peking University</p>
+        <p class="cv-contact">Beijing, China | +86 131 5081 0185 | <a href="mailto:shenjiantao26@stu.pku.edu.cn">shenjiantao26@stu.pku.edu.cn</a></p>
+        <p class="cv-contact"><a href="https://jiantaoshen12.github.io/">jiantaoshen12.github.io</a> | <a href="https://github.com/jiantaoShen12">github.com/jiantaoShen12</a></p>
+        <p class="cv-profile">PhD researcher with a mathematics background and first-author work in multimodal dynamics and ensemble learning. Interested in flow matching and LLM agents.</p>
       </header>
       <section id="education">
         <h2>Education</h2>
-        <div class="cv-entry">
+        <div class="cv-entry" data-date="Sep 2026 - Present">
+          <h3>Peking University</h3>
           <p class="cv-date">Sep 2026 - Present</p>
-          <h3>Ph.D. Student, Peking University</h3>
-          <p>Big Data Center, Academy for Advanced Interdisciplinary Studies</p>
-          <p>Advisor: <a href="https://cliffzhou92.github.io/">Prof. Peijie Zhou</a></p>
+          <p>PhD student, Big Data Center, Academy for Advanced Interdisciplinary Studies. Advisor: Peijie Zhou.</p>
         </div>
-        <div class="cv-entry">
-          <p class="cv-date">Sep 2022 - Sep 2026</p>
-          <h3>B.S. in Mathematics and Applied Mathematics (Statistics)</h3>
-          <p>School of Mathematics, South China University of Technology</p>
-          <p>Advisor: Rui Liu</p>
+        <div class="cv-entry" data-date="2022 - 2026">
+          <h3>South China University of Technology</h3>
+          <p class="cv-date">2022 - 2026</p>
+          <p>BSc in Mathematics and Applied Mathematics (Statistics). University-level Outstanding Thesis, 2026.</p>
         </div>
       </section>
       <section id="research">
-        <h2>Research Interests</h2>
+        <h2>Selected Research</h2>
+        <div class="cv-entry" data-date="2026">
+          <h3>MOFI</h3>
+          <p class="cv-date">2026</p>
+          <p class="cv-project-meta">Dynamic multimodal learning | First author | <a href="https://github.com/jiantaoShen12/MOFI">Code</a></p>
+          <ul>
+            <li>Co-designed and implemented a framework coupling cross-omics correspondence, continuous state dynamics and population growth to reconstruct trajectories from time-series snapshots.</li>
+            <li>Evaluated RNA-ATAC and RNA-protein dynamics on simulations and <strong>four biological datasets</strong>, including fate mapping and in silico perturbation analyses.</li>
+            <li>Released Python/PyTorch code, experiment configurations, analysis notebooks and trajectory visualizations.</li>
+          </ul>
+        </div>
+        <div class="cv-entry" data-date="2025">
+          <h3>FatePredictor</h3>
+          <p class="cv-date">2025</p>
+          <p class="cv-project-meta">Ensemble time-series prediction | Co-first author | <a href="https://github.com/jiantaoShen12/Fatepredictor">Code</a></p>
+          <ul>
+            <li>Implemented CNN-based feature extraction with LSTM, BiLSTM and GRU ensembles to predict bifurcation types from partial time-series observations.</li>
+            <li>Built Python modeling and R preprocessing workflows using dynamic unbalanced optimal transport; evaluated on two simulated and four biological datasets.</li>
+          </ul>
+        </div>
+      </section>
+      <section id="skills">
+        <h2>Technical Skills</h2>
         <div class="cv-entry">
-          <p>Single-cell multi-omics and spatial transcriptomics dynamics; critical transition identification in cell fate decisions.</p>
+          <p><strong>Programming and tools:</strong> Python, PyTorch, R, MATLAB; NumPy, SciPy, pandas, scikit-learn, Scanpy.</p>
+          <p><strong>Methods:</strong> multimodal learning, neural ODEs/SDEs, optimal transport, time-series modeling.</p>
         </div>
       </section>
       <section id="publications">
-        <h2>Publications &amp; Preprints</h2>
-        <div class="cv-entry">
-          <h3>MOFI reveals dynamic multi-omics coordination during cell fate progression</h3>
-          <p><strong>J. Shen</strong>, Z. Zhang, H. Peng, Q. Peng, Z. Wang, R. Liu, P. Zhou.</p>
-          <p class="cv-note"><em>bioRxiv</em>, 2026. Preprint.</p>
-          <p class="cv-links"><a href="https://doi.org/10.64898/2026.10.09.757904">doi:10.64898/2026.10.09.757904</a> · <a href="https://github.com/jiantaoShen12/MOFI">Code</a></p>
+        <h2>Publications and Preprints</h2>
+        <div class="cv-entry cv-publication">
+          <h3><a href="https://doi.org/10.64898/2026.10.09.757904">MOFI reveals dynamic multi-omics coordination during cell fate progression</a></h3>
+          <p class="cv-authors"><strong>J. Shen</strong>, Z. Zhang, H. Peng, Q. Peng, Z. Wang, R. Liu, P. Zhou.</p>
+          <p class="cv-venue">bioRxiv, 2026. <strong>Under review at Nature Cell Biology.</strong></p>
         </div>
-        <div class="cv-entry">
-          <h3>Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</h3>
-          <p>Z. Zhang, Z. Wang, Y. Sun, <strong>J. Shen</strong>, Q. Peng, T. Li, P. Zhou.</p>
-          <p class="cv-note"><em>npj Systems Biology and Applications</em>, 2025.</p>
-          <p class="cv-links"><a href="https://doi.org/10.1038/s41540-025-00624-9">doi:10.1038/s41540-025-00624-9</a></p>
+        <div class="cv-entry cv-publication">
+          <h3><a href="https://doi.org/10.64898/2026.11.04.764438">Virtual dynamics of spatiotemporal single-cell interactions</a></h3>
+          <p class="cv-authors">Z. Zhang, Z. Wang, Q. Tian, H. Hou, J. Han, <strong>J. Shen</strong>, Y. Sun, X. Zhou, Q. Peng, Q. Nie, T. Li, P. Zhou.</p>
+          <p class="cv-venue">CytoBridge. bioRxiv, 2026. <strong>Under revision for Nature Biotechnology.</strong></p>
         </div>
-        <div class="cv-entry">
-          <h3>FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</h3>
-          <p><strong>J. Shen</strong>, N. Chen, B. Niu, J. Zhong, R. Liu.</p>
-          <p class="cv-note"><em>The Innovation</em>, 2025.</p>
-          <p class="cv-links"><a href="https://doi.org/10.1016/j.xinn.2025.101010">doi:10.1016/j.xinn.2025.101010</a></p>
+        <div class="cv-entry cv-publication">
+          <h3><a href="https://doi.org/10.1038/s41540-025-00624-9">Deciphering cell-fate trajectories using spatiotemporal single-cell transcriptomic data</a></h3>
+          <p class="cv-authors">Z. Zhang, Z. Wang, Y. Sun, <strong>J. Shen</strong>, Q. Peng, T. Li, P. Zhou.</p>
+          <p class="cv-venue">npj Systems Biology and Applications 12, 2 (2026). Review article. Co-first author.</p>
+        </div>
+        <div class="cv-entry cv-publication">
+          <h3><a href="https://doi.org/10.1016/j.xinn.2025.101010">FatePredictor: Cell fate decision-making prediction with an ensemble deep learning model</a></h3>
+          <p class="cv-authors"><strong>J. Shen</strong>, N. Chen, B. Niu, J. Zhong, R. Liu.</p>
+          <p class="cv-venue">The Innovation 6(11), 101010 (2025). Co-first author.</p>
         </div>
       </section>
-      <section id="honors">
-        <h2>Honors &amp; Awards</h2>
+      <section id="interests">
+        <h2>Current Research Interests</h2>
         <div class="cv-entry">
-          <p class="cv-date">Jun 8, 2026</p>
-          <h3>University-level Outstanding Thesis</h3>
+          <p>Flow matching and reinforcement learning for constrained dynamics; LLM agents with domain knowledge and researcher feedback; persistent memory, affective interaction and multi-agent worlds.</p>
         </div>
       </section>
     </main>
@@ -167,3 +234,4 @@
   <footer class="cv-footer">© 2026 Jiantao Shen · <a href="index.html">Back to homepage</a></footer>
 </body>
 </html>
+
